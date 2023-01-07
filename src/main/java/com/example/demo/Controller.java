@@ -35,9 +35,6 @@ public class Controller {
         Team team = teamRepository.findById(teamId).get();
 
         return new GetTeamRes(teamId, team.getName(), memberList);
-
-
-
     }
 
 
