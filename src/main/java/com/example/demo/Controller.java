@@ -51,6 +51,9 @@ public class Controller {
      */
 
 
+    /**
+     * 직접 테이블 생성 후 연결하는 방식
+     * */
     @GetMapping("/team/{teamId}")
     public GetTeamRes getTeam(@PathVariable Long teamId){
         List<Member> memberList = memberRepository.findAllByTeamId(teamId);

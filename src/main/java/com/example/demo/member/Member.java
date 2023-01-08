@@ -27,6 +27,12 @@ public class Member {
 
     private String name;
 
+
+    /**
+     * 3. 직접 테이블 생성하고 변수와 연결
+     * 대신 결과에 teamId가 계속 나옴
+     * 응답 dto로 매핑해서 반환해주는 방식으로 처리하기
+     * */
     @Column(name = "team_id")
     private Long teamId;
 
