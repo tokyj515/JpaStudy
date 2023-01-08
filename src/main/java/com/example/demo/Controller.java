@@ -1,6 +1,7 @@
 package com.example.demo;
 
 
+import com.example.demo.member.GetMemberRes;
 import com.example.demo.member.Member;
 import com.example.demo.member.MemberRepository;
 import com.example.demo.team.GetTeamRes;
@@ -37,5 +38,10 @@ public class Controller {
     }
 
 
+    @GetMapping("/member/{memberId}")
+    public GetMemberRes getMember(@PathVariable Long memberId){
+        Member member = memberRepository.findById(memberId).get();
+        return new GetMemberRes(member.getName(), member.getTeam().getName());
+    }
 
 }

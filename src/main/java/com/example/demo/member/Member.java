@@ -22,14 +22,19 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@Column(name = "member_id")
     private Long id;
 
     private String name;
 
 
+
+
+
+    /**
+     * 다대일 = 멤버대팀, 양방향 처리
+     * */
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY) //멤버n:팀1
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
 

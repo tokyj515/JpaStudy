@@ -27,11 +27,19 @@ public class Team  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@Column(name = "team_id")
     private Long id;
 
     private String name;
 
+
+
+
+
+
+
+    /**
+     * 일대다 = 팀대멤버, 양방향 처리
+     * */
     //@OneToMany(mappedBy = "team", cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     @OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
