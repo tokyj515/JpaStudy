@@ -30,12 +30,15 @@ public class Member {
 
 
 
+
     /**
+     * 1.
      * 다대일 = 멤버대팀, 양방향 처리
      * */
+    /*
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
-
+    */
 }
