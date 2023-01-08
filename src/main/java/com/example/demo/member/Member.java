@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 
 @NoArgsConstructor
@@ -25,7 +26,6 @@ public class Member {
     private Long id;
 
     private String name;
-
 
 
 

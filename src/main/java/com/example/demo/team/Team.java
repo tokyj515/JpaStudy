@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 @Builder
@@ -32,11 +33,6 @@ public class Team  {
     private String name;
 
 
-
-
-
-
-
     /**
      * 일대다 = 팀대멤버, 양방향 처리
      * */
@@ -45,4 +41,19 @@ public class Team  {
     @OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
     private List<Member> members = new ArrayList<>();
 
+
+
+
+    /**
+     * 다대다, 조인테이블 생성
+     * 테이블 생성까지 확인
+     * insert는 좀 더 생각해보기
+     * */
+//    @ManyToMany
+//    @JoinTable(
+//            name = "team_member",
+//            joinColumns = {@JoinColumn(name = "team_id", referencedColumnName = "id")},
+//            inverseJoinColumns = {@JoinColumn(name = "member_id", referencedColumnName = "id")})
+//    private  List<Member> memberListJoinTable;
+//
 }
