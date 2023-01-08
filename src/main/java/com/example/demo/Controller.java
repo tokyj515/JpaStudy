@@ -33,7 +33,6 @@ public class Controller {
     public GetTeamRes getTeam(@PathVariable Long teamId){
         List<Member> memberList = memberRepository.findAllByTeam_Id(teamId);
         Team team = teamRepository.findById(teamId).get();
-
         return new GetTeamRes(teamId, team.getName(), memberList);
     }
 

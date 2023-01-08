@@ -16,9 +16,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Getter
 @Builder
-//@Table(name = "Member")
+@Table(name = "Member")
 @Entity
-public class Member implements Serializable {
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +32,5 @@ public class Member implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY) //멤버n:팀1
     @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
-
 
 }

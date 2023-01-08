@@ -16,10 +16,13 @@ import java.util.List;
 @AllArgsConstructor
 @Setter
 @Getter
-//@Table(name = "Team")
+@Table(name = "Team")
 @Entity
-public class Team implements Serializable {
-    //주인이 아닌쪽은 mappedBy를 사용한다. 주인쪽의 필드 이름을 값으로 입력
+public class Team  {
+
+    /**
+     * /@Entity안에 직렬화 포함되어 있어서 implements Serializable는 안 해도 된다..?
+     * */
 
 
     @Id
