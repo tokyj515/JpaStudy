@@ -30,6 +30,11 @@ public class Controller {
         return "test";
     }
 
+
+    /**
+     * 일대다 , 다대일 일 때의 api
+     * */
+    /*
     @GetMapping("/team/{teamId}")
     public GetTeamRes getTeam(@PathVariable Long teamId){
         List<Member> memberList = memberRepository.findAllByTeam_Id(teamId);
@@ -43,5 +48,23 @@ public class Controller {
         Member member = memberRepository.findById(memberId).get();
         return new GetMemberRes(member.getName(), member.getTeam().getName());
     }
+     */
+
+
+    @GetMapping("/team/{teamId}")
+    public GetTeamRes getTeam(@PathVariable Long teamId){
+        List<Member> memberList = memberRepository.findAllByTeamId(teamId);
+        Team team = teamRepository.findById(teamId).get();
+        return new GetTeamRes(teamId, team.getName(), memberList);
+    }
+
+
+    @GetMapping("/member/{memberId}")
+    public GetMemberRes getMember(@PathVariable Long memberId){
+        Member member = memberRepository.findById(memberId).get();
+        Team team = teamRepository.findById(member.getTeamId()).get();
+        return new GetMemberRes(member.getName(), team.getName());
+    }
+
 
 }

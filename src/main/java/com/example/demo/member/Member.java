@@ -27,7 +27,8 @@ public class Member {
 
     private String name;
 
-
+    @Column(name = "team_id")
+    private Long teamId;
 
 
 

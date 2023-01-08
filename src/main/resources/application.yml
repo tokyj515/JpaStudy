@@ -21,8 +21,10 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
       #update로 설정하면 import.sql 실행 안 됨
+      #어노테이션으로 ddl 실행할 때(일대다, 다대일, 다대다) create류로 실행
+      #none으로 바꾸고 직접 DB에서 테이블 생성하기
     show-sql: true
     properties:
       hibernate:
