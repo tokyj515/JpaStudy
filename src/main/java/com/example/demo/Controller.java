@@ -53,6 +53,9 @@ public class Controller {
 
     /**
      * 직접 테이블 생성 후 연결하는 방식
+     * 테이블에 외래키 변수가 있어서 엔티티 자체로 반환하면
+     * 외래키 변수가 반복적으로 출력
+     * 그래서 dto로 필요한 정보만 저장해서 반환하는 건가보다
      * */
     @GetMapping("/team/{teamId}")
     public GetTeamRes getTeam(@PathVariable Long teamId){
