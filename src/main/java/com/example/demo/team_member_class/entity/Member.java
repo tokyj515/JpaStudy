@@ -1,7 +1,6 @@
-package com.example.demo.member;
+package com.example.demo.team_member_class.entity;
 
 
-import com.example.demo.team.Team;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +8,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Set;
 
 
 @NoArgsConstructor
@@ -33,8 +30,10 @@ public class Member {
      * 대신 결과에 teamId가 계속 나옴
      * 응답 dto로 매핑해서 반환해주는 방식으로 처리하기
      * */
-    @Column(name = "team_id")
-    private Long teamId;
+//    @Column(name = "team_id")
+//    private Long teamId;
+
+
 
 
 
@@ -42,10 +41,9 @@ public class Member {
      * 1.
      * 다대일 = 멤버대팀, 양방향 처리
      * */
-    /*
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
-    */
+
 }

@@ -1,4 +1,4 @@
-package com.example.demo.member;
+package com.example.demo.team_member_class.dto.member;
 
 
 import lombok.*;

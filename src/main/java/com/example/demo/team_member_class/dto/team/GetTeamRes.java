@@ -1,6 +1,6 @@
-package com.example.demo.team;
+package com.example.demo.team_member_class.dto.team;
 
-import com.example.demo.member.Member;
+import com.example.demo.team_member_class.entity.Member;
 import lombok.*;
 
 import java.util.List;
